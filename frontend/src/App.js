@@ -28,13 +28,7 @@ function App() {
   const code = new URLSearchParams(window.location.search).get('code');
   useSpotifyAuth(code);
 
-  return (
-    <div>
-      Spotify Ava Clone
-      {user.accessToken && <Home />}
-      <Auth />
-    </div>
-  );
+  return <div>{user.accessToken ? <Home /> : <Auth />}</div>;
 }
 
 export default App;

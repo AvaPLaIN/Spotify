@@ -6,6 +6,7 @@ import createSagaMiddleware from '@redux-saga/core';
 
 //! IMPORT REDUCERS
 import authReducer from './ducks/spotifyAuth';
+import musicReducer from './ducks/spotifyMusic';
 
 //! MIDDLEWARE
 const loggerMiddleware = createLogger({});
@@ -19,6 +20,7 @@ middleware = [...middleware, sagaMiddleware];
 //! STATES
 const reducer = combineReducers({
   auth: authReducer,
+  music: musicReducer,
 });
 
 //! LOCALSTORAGE
